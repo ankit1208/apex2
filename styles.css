@@ -1,0 +1,235 @@
+/* Reset default styles */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    background-color: #2E7D32; /* Green footer background */
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Navigation styles */
+nav ul {
+    list-style: none;
+    display: flex;
+    background-color: #0d072d; /* Dark green color */
+    padding: 10px;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    background-color: #2E7D32; /* Green background on hover */
+    border-radius: 5px;
+}
+
+.logo img {
+    max-height: 50px; /* Adjust as needed */
+}
+
+/* Hero section styles */
+.home {
+    background-image: url('images/banner.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 200px;
+}
+
+.home h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+/* Project section styles */
+.project-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.project-block {
+    flex: 0 0 calc(30% - 20px); /* Width to make blocks larger */
+    height: 0; /* Reset the height */
+    padding-bottom: 30%; /* Create a square by setting height relative to width */
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Add transition for transform */
+    background-color: #2E7D32; /* Green color for block */
+    border-radius: 5px;
+    overflow: hidden; /* Ensure image does not overflow the block */
+    position: relative; /* Enable positioning of image and text */
+    text-align: center;
+}
+
+.project-block:hover {
+    transform: scale(1.05); /* Slightly enlarge the block on hover */
+}
+
+.project-block a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    height: 100%; /* Ensure the anchor takes up full block height */
+}
+
+.project-block img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure image covers the block */
+    position: absolute; /* Position image in the background */
+    top: 0;
+    left: 0;
+    transition: transform 0.3s ease; /* Add transition for transform */
+}
+
+.project-block a:hover img {
+    transform: scale(1.1); /* Enlarge the image on hover */
+}
+
+.project-block h3 {
+    position: relative; /* Position text above the image */
+    margin: 0;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background to text */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: white;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button[type="submit"] {
+    background-color: white;
+    color: #2E7D32;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #ddd;
+}
+
+/* Responsive design for project blocks */
+@media (max-width: 1200px) {
+    .project-block {
+        flex: 0 0 calc(45% - 20px); /* Two columns on large screens */
+        padding-bottom: 45%; /* Maintain square aspect ratio */
+    }
+}
+
+@media (max-width: 768px) {
+    .project-block {
+        flex: 0 0 calc(100% - 20px); /* One column on medium screens */
+        padding-bottom: 100%; /* Maintain square aspect ratio */
+    }
+}
+
+.contact-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 20px;
+    background-color: #2E7D32;
+}
+
+.qr-code {
+    margin: auto;
+    max-width: 200px;
+}
+
+.qr-code img {
+    width: 100%; /* Corrected the width */
+    mix-blend-mode: multiply;
+}
+
+.contact-card {
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+}
+
+.card-content {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .qr-code {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .card-content {
+        max-width: 100%;
+    }
+}
+
+.upcoming-projects,
+.past-projects {
+    margin-bottom: 40px;
+}
+
+.upcoming-projects h3,
+.past-projects h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2E7D32;
+}
+
